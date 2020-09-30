@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Евклид. Проектные системы</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -36,13 +37,19 @@
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M25.1556 24.0571L25.1556 9L26.0378 9L26.0378 24.0571L33.9471 24.0571L41.0355 24.0571L41.0355 24.9429L26.0378 24.9429L26.0378 40L25.1556 40L25.1556 24.9429L10.1579 24.9429L10.1579 24.0571L25.1556 24.0571Z" fill="000"/>
 		</symbol>
 	</svg>
+	<div class="overlay"></div>
 	<header class="header">
 		<div class="container">
+			<button class="btn-reset header__burger burger" aria-label="Открыть меню">
+				<span class="burger__line" aria-hidden="true"></span>
+				<span class="burger__line" aria-hidden="true"></span>
+				<span class="burger__line" aria-hidden="true"></span>
+			</button>
 			<a class="header__logo">
 				<img src="img/header-logo.png" alt="Логотип компании Евклид">
 			</a>
 			<div class="header__right">
-				<nav class="header__nav ">
+				<nav class="header__nav nav">
 					<ul class="header__nav__list">
 						<li class="header__nav__item">
 							<a href="#" class="header__nav__link link">О нас</a>
@@ -62,29 +69,52 @@
 					</ul>
 				</nav>
 				<form class="header__form form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
-					<button aria-label="Кнопка поиска по сайту" type="submit" class="search__form btn-reset">
+					<button aria-label="Поиск по сайту" type="submit" class="search__form btn-reset">
 						<svg>
 							<use xlink:href="#search"></use>
 						</svg>
 					</button>
 				</form>
-				<button class="btn-reset header__burger burger" aria-label="Open-menu">
-					<span class="burger__line" aria-hidden="true"></span>
-					<span class="burger__line" aria-hidden="true"></span>
-					<span class="burger__line" aria-hidden="true"></span>
-				</button>
 			</div>
 		</div>
 	</header>
 	<main class="main">
 		<section class="first">
 			<div class="container">
-				<div class="bg">
-					<div class="first__info">
-						<h1 class="first__info__heading">Проектные решения любой сложности</h1>
-						<p class="first__info__descr">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
-						<button aria-label="Кнопка заказа расчёта" class="btn-reset button button--yellow">Заказать расчёт</button>
+
+				<div class="swiper-container">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<div class="bg first-bg">
+									<div class="first__info">
+										<h1 class="first__info__heading">Проектные решения любой сложности</h1>
+										<p class="first__info__descr">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+										<button aria-label="Кнопка заказа расчёта" class="btn-reset button button--yellow">Заказать расчёт</button>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="bg second-bg">
+									<div class="first__info">
+										<h1 class="first__info__heading">Проектные решения любой сложности</h1>
+										<p class="first__info__descr">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+										<button aria-label="Кнопка заказа расчёта" class="btn-reset button button--yellow">Заказать расчёт</button>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="bg third-bg">
+									<div class="first__info">
+										<h1 class="first__info__heading">Проектные решения любой сложности</h1>
+										<p class="first__info__descr">Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов</p>
+										<button aria-label="Кнопка заказа расчёта" class="btn-reset button button--yellow">Заказать расчёт</button>
+									</div>
+								</div>
+							</div>
 					</div>
+					<div class="banner-pag swiper-pagination "></div>
 				</div>
 			</div>
 		</section>
@@ -204,11 +234,11 @@
 					<div class="accordion-item">
 						<div class="accordion-item__trigger trigger">
 							<p class="trigger__descr">Из чего формируется конечная стоимость проекта?</p>
-							<a href="#" class="accordion-item__link">
-								<svg>
+							<button class="btn-reset accordion-item__link" aria-label="Открытие аккордеона">
+								<svg class="db">
 									<use xlink:href="#plus"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="accordion-item__content">
 								<p class="accordion-item__content__descr">
@@ -238,11 +268,11 @@
 					<div class="accordion-item">
 						<div class="accordion-item__trigger">
 							<p class="trigger__descr">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</p>
-							<a href="#" class="accordion-item__link">
+							<button class="btn-reset accordion-item__link" aria-label="Открытие аккордеона">
 								<svg>
 									<use xlink:href="#plus"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="accordion-item__content">
 								<p class="accordion-item__content__descr">
@@ -272,11 +302,11 @@
 					<div class="accordion-item">
 						<div class="accordion-item__trigger">
 							<p class="trigger__descr">Я выбираю между разными компаниями. В чём ваше отличие?</p>
-							<a href="#" class="accordion-item__link">
+							<button class="btn-reset accordion-item__link" aria-label="Открытие аккордеона">
 								<svg>
 									<use xlink:href="#plus"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="accordion-item__content">
 								<p class="accordion-item__content__descr">
@@ -306,11 +336,11 @@
 					<div class="accordion-item">
 						<div class="accordion-item__trigger">
 							<p class="trigger__descr">Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</p>
-							<a href="#" class="accordion-item__link">
+							<button class="btn-reset accordion-item__link" aria-label="Открытие аккордеона">
 								<svg>
 									<use xlink:href="#plus"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="accordion-item__content">
 								<p class="accordion-item__content__descr">
@@ -340,11 +370,11 @@
 					<div class="accordion-item">
 						<div class="accordion-item__trigger">
 							<p class="trigger__descr">Могу ли я вернуть деньги на каком-либо из этапов работ?</p>
-							<a href="#" class="accordion-item__link">
+							<button class="btn-reset accordion-item__link" aria-label="Открытие аккордеона">
 								<svg>
 									<use xlink:href="#plus"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 						<div class="accordion-item__content">
 								<p class="accordion-item__content__descr">
@@ -449,8 +479,8 @@
 						<textarea class="textarea" name="userMessage" placeholder="Сообщение"></textarea>
 					</label>
 					<button aria-label="Кнопка отправки данных формы" type="submit" class="btn-reset button button--yellow">Отправить данные</button>
-					<label class="form__check">
-						<input name="chek" type="checkbox" required>
+					<label id="personal-data-label" tabindex="0" class="form__check">
+						<input id="personal-data-input" name="chek" type="checkbox" checked="checked" required>
 						<span class="chek-span">Cогласен на обработку данных</span>
 				</label>
 				</form>
@@ -482,5 +512,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
