@@ -3,7 +3,10 @@ const personalLabel = document.querySelector('#personal-data-label'),
 			menu = document.querySelector('.nav'),
 			burger = document.querySelector('.burger'),
 			overlay = document.querySelector('.overlay'),
-			accordionTrigger = document.querySelectorAll('.accordion-item__trigger');
+			accordionTrigger = document.querySelectorAll('.accordion-item__trigger'),
+			tabsLink = document.querySelectorAll('.tabs__link'),
+			tabContent = document.querySelectorAll('.tabs__content');
+
 
 
 const lockScroll = () => {
@@ -48,4 +51,18 @@ personalLabel.addEventListener('keydown', function(e) { // Прослушива�
 	if (e.keyCode === 13) { // Если нажат Enter  (он имеет код 13)
 	 personalInput.click(); // симулируем клик по полю ввода
 	}
- });
+});
+
+tabsLink.forEach(function(tabsBtn){
+
+	tabsBtn.addEventListener('click', function(e) {
+		const path = e.currentTarget.dataset.path;
+
+		tabContent.forEach(function(tabItem){
+			tabItem.classList.remove('tab-content-active');
+		});
+
+		document.querySelector(`[data-target="${path}"]`).classList.add('tab-content-active');
+	});
+});
+
