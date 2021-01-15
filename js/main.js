@@ -66,3 +66,13 @@ tabsLink.forEach(function(tabsBtn){
 	});
 });
 
+scrollLinks.forEach(function(el){
+	el.addEventListener('click', function(e) {
+		e.preventDefault();
+		const blockID = el.getAttribute('href');
+		document.querySelector('' + blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
+	})
+});
