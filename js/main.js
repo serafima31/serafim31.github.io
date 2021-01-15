@@ -5,7 +5,8 @@ const personalLabel = document.querySelector('#personal-data-label'),
 			overlay = document.querySelector('.overlay'),
 			accordionTrigger = document.querySelectorAll('.accordion-item__trigger'),
 			tabsLink = document.querySelectorAll('.tabs__link'),
-			tabContent = document.querySelectorAll('.tabs__content');
+			tabContent = document.querySelectorAll('.tabs__content'),
+			scrollLinks = document.querySelectorAll('.header__nav__link');
 
 
 
